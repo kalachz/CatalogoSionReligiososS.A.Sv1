@@ -1,0 +1,1907 @@
+/* =========================================
+   RESET GENERAL
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FILTRO
+========================================= */
+
+.filtro-section {
+    width: 100%;
+    background: #000;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro-btn {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filtro-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown */
+
+.filtro-dropdown {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #400000, #000);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 9999;
+
+    list-style: none;
+    padding: 40px;
+    margin: 0;
+
+    overflow-y: auto;
+}
+
+.filtro-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo elegante mejorado */
+.filtro-dropdown li {
+
+    font-size: clamp(1.8rem, 2.2vw, 3rem);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: inline-block;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.filtro-dropdown li:hover {
+    transform: translateY(-6px);
+    opacity: 0.9;
+}
+
+/* Línea elegante */
+.filtro-dropdown li::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    transform: translateX(-50%);
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #fff;
+
+    transition: width 0.3s ease;
+}
+
+/* Hover */
+.filtro-dropdown li:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   VINOS
+========================================= */
+
+.vinos-section {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(135deg, #6b0000, #a30000);
+    padding: 80px 60px;
+}
+
+.vinos-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID SOLO VINOS (más grandes) */
+
+.vinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: 60px;
+}
+
+/* TARJETAS SOLO VINOS */
+
+.vino-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.vino-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* Imagen vinos MÁS grande */
+
+.vino-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* Texto vinos */
+
+.vino-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.vino-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+/* Línea debajo del nombre vino */
+
+.vino-info h3::after {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 8px;
+    background: #6b0000;
+    margin: 8px auto 0;
+}
+
+/* =========================================
+   BOTÓN CERRAR C - ESQUINA SUPERIOR DERECHA
+========================================= */
+.dropdown-close {
+    position: absolute;
+    top: 20px;         /* distancia desde la parte superior */
+    right: 20px;       /* distancia desde la parte derecha */
+    transform: none;   /* eliminamos cualquier traducción horizontal */
+
+    padding: 12px 36px;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(6px);
+    transition: all 0.35s ease;
+}
+
+/* Hover elegante */
+.dropdown-close:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px); /* solo efecto vertical */
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
+}
+
+/* Efecto activo */
+.dropdown-close:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Referencia */
+
+.vino-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+.vino-mullerm {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   HOSTIAS
+========================================= */
+
+.hostias-section {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(135deg, #8c6b00, #b38b00);
+    padding: 80px 60px;
+}
+
+.hostias-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+
+/* GRID SOLO HOSTIAS */
+
+.hostias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 60px;
+}
+
+/* TARJETAS SOLO HOSTIAS */
+
+.hostia-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.hostia-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* Imagen hostias */
+
+.hostia-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 50px;
+}
+
+/* Texto hostias */
+
+.hostia-info {
+    text-align: center;
+    padding: 70px;
+}
+
+.hostia-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+/* Línea debajo del nombre hostia */
+
+.hostia-info h3::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 8px;
+    background: #8c6b00;
+    margin: 8px auto 0;
+}
+
+/* Referencia */
+.hostia-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+/* =========================================
+   VELAS
+========================================= */
+
+.velas-section {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(135deg, #f7009c ); /* un rosado elegante */
+    padding: 80px 60px;
+}
+
+.velas-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID SOLO VELAS */
+
+.velas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: 60px;
+}
+
+/* TARJETAS SOLO VELAS */
+
+.vela-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.vela-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* Imagen velas */
+
+.vela-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* Texto velas */
+
+.vela-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.vela-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+/* Línea debajo del nombre vela */
+
+.vela-info h3::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 8px;
+    background: #df2b5b; /* mismo color de degradado */
+    margin: 8px auto 0;
+}
+
+/* Referencia */
+
+.vela-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+
+
+/* =========================================
+   CAMANDULAS
+========================================= */
+
+.camandulas-section {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(135deg, #1f4d3b, #2f6b52);
+    padding: 80px 60px;
+}
+
+.camandulas-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID SOLO CAMANDULAS (más grandes) */
+
+.camandulas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS SOLO CAMANDULAS */
+
+.camandula-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.camandula-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* Imagen camandulas MÁS grande */
+
+.camandula-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* Texto camandulas */
+
+.camandula-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.camandula-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+/* Línea debajo del nombre camandula */
+
+.camandula-info h3::after {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 8px;
+    background: linear-gradient(135deg, #1f4d3b, #2f6b52);
+    margin: 8px auto 0;
+}
+
+/* Referencia */
+
+.camandula-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   LLAVEROS
+========================================= */
+
+.llaveros-section {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(135deg, #006e99, #2f6b52);
+    padding: 80px 60px;
+}
+
+.llaveros-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID SOLO CAMANDULAS (más grandes) */
+
+.llaveros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+
+/* TARJETAS SOLO LLAVEROS */
+
+.llavero-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.llavero-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* Imagen llaveros MÁS grande */
+
+.llavero-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* Texto camandulas */
+
+.llavero-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.llavero-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+/* Línea debajo del nombre camandula */
+
+.llavero-info h3::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 9px;
+    background: linear-gradient(135deg, #1f4d3b, #2f6b52);
+    margin: 8px auto 0;
+}
+
+/* Referencia */
+
+.llavero-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   ELEMENTOS LITURGICOS
+========================================= */
+
+.liturgicos-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4e0d76, #7b1fa2);
+    padding: 80px 60px;
+}
+
+.liturgicos-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID CORRECTO */
+
+.liturgicos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS */
+
+.liturgico-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+.liturgico-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGEN */
+
+.liturgico-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* TEXTO */
+
+.liturgico-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.liturgico-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.liturgico-info h3::after {
+    content: "";
+    display: block;
+    width: 70%; /* antes 70% */
+    height: 8px;
+    background: linear-gradient(135deg, #4e0d76, #7b1fa2);
+    margin: 12px auto 0;
+}
+
+/* Referencia */
+
+.liturgico-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   LIBROS
+========================================= */
+
+.libros-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4f6d67 );
+    padding: 80px 60px;
+}
+
+.libros-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID CORRECTO */
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS */
+
+.libro-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+.libro-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGEN */
+
+.libro-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* TEXTO */
+
+.libro-info {
+    text-align: center;
+    padding: 30px;
+}
+
+.libro-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.libro-info h3::after {
+    content: "";
+    display: block;
+    width: 70%; /* antes 70% */
+    height: 8px;
+    background: linear-gradient(135deg, #4f6d67 );
+    margin: 12px auto 0;
+}
+
+/* Referencia */
+
+.libro-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+
+/* =========================================
+   VASOS SAGRADOS
+========================================= */
+
+.vasos-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00a3f4 );
+    padding: 80px 60px;
+}
+
+.vasos-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID CORRECTO */
+
+.vasos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS */
+
+.vaso-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+.vaso-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGEN */
+
+.vaso-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* TEXTO */
+
+.vaso-info {
+    text-align: center;
+    padding: 30px;
+}
+
+.vaso-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.vaso-info h3::after {
+    content: "";
+    display: block;
+    width: 70%; /* antes 70% */
+    height: 8px;
+    background: linear-gradient(135deg, #00a3f4 );
+    margin: 12px auto 0;
+}
+
+/* Referencia */
+
+.vaso-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   CRISTOS
+========================================= */
+
+.cristos-section {
+    width: 100%;
+    background: linear-gradient(135deg, #205a77);
+    padding: 80px 60px;
+}
+
+.cristos-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID CORRECTO */
+
+.cristos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS */
+
+.cristo-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+.cristo-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGEN */
+
+.cristo-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* TEXTO */
+
+.cristo-info {
+    text-align: center;
+    padding: 30px;
+}
+
+.cristo-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.cristo-info h3::after {
+    content: "";
+    display: block;
+    width: 70%; /* antes 70% */
+    height: 8px;
+    background: linear-gradient(135deg, #00a3f4 );
+    margin: 12px auto 0;
+}
+
+/* Referencia */
+
+.cristo-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   ESTAMPAS - AFICHES
+========================================= */
+
+.estampas-section {
+    width: 100%;
+    background: linear-gradient(135deg, #f3633c);
+    padding: 80px 60px;
+}
+
+.estampas-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* GRID CORRECTO */
+
+.estampas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* TARJETAS */
+
+.estampa-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+.estampa-card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGEN */
+
+.estampa-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 60px;
+}
+
+/* TEXTO */
+
+.estampa-info {
+    text-align: center;
+    padding: 30px;
+}
+
+.estampa-info h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.estampa-info h3::after {
+    content: "";
+    display: block;
+    width: 70%; /* antes 70% */
+    height: 8px;
+    background: linear-gradient(135deg,  #f3633c );
+    margin: 12px auto 0;
+}
+
+/* Referencia */
+
+.estampa-ref {
+    font-size: 50px;
+    font-weight: 500;
+    color: #555;
+}
+
+
+
+
+
+
+/* ========================================= */
+/* MODALES */
+/* ========================================= */
+
+/* ========================================= */
+/* MODAL VINOS */
+/* ========================================= */
+.modal-vinos {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-vinos {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-vinos:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-vinos {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-vinos:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL HOSTIAS */
+/* ========================================= */
+.modal-hostias {
+    display: none; 
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-hostias {
+    width: 80%;       
+    height: auto;     
+    max-height: 90%;  
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-hostias:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-hostias {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-hostias:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL VELAS */
+/* ========================================= */
+.modal-velas {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-velas {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-velas:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-velas {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-velas:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL CAMANDULAS */
+/* ========================================= */
+.modal-camandulas {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-camandulas {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-camandulas:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-camandulas {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-camandulas:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL LLAVEROS */
+/* ========================================= */
+.modal-llaveros {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-llaveros {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-llaveros:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-llaveros {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-llaveros:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL ELEMENTOS LITURGICOS */
+/* ========================================= */
+
+.modal-liturgicos {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-liturgicos {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-liturgicos:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-liturgicos {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-liturgicos:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL ELEMENTOS LIBROS */
+/* ========================================= */
+
+.modal-libros {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-libros {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-libros:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-libros {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-libros:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL VASOS SAGRADOS */
+/* ========================================= */
+
+.modal-vasos {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-vasos {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-vasos:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-vasos {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-vasos:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL CRISTOS */
+/* ========================================= */
+
+.modal-cristos {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-cristos {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-cristos:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-cristos {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-cristos:hover {
+    color: #FFF8DC;
+}
+
+/* ========================================= */
+/* MODAL ESTAMPAS */
+/* ========================================= */
+
+.modal-estampas {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-estampas {
+    width: 80%;       /* ancho de la imagen */
+    height: auto;     /* mantiene proporción */
+    max-height: 90%;  /* no se salga verticalmente */
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.modal-content-estampas:hover {
+    transform: scale(1.02);
+}
+
+.modal-close-estampas {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFD700; /* dorado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close-estampas:hover {
+    color: #FFF8DC;
+}
+
+
+
+/* =========================================
+   RESPONSIVE GLOBAL
+========================================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+    .filtro-btn {
+        font-size: 1.8rem;
+    }
+
+    .dropdown-close {
+        font-size: 2rem;
+        padding: 10px 20px;
+    }
+
+    section {
+        padding: 60px 30px !important;
+    }
+
+    h2 {
+        font-size: 2.2rem !important;
+    }
+
+    /* Grids */
+    .vinos-grid,
+    .hostias-grid,
+    .camandulas-grid,
+    .llaveros-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .velas-grid,
+    .liturgicos-grid,
+    .libros-grid,
+    .vasos-grid,
+    .llaveros-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Imágenes */
+    .vino-card img,
+    .hostia-card img,
+    .vela-card img,
+    .camandula-card img,
+    .llavero-card img,
+    .liturgico-card img,
+    .libro-card img,
+    .vaso-card img,
+    .cristo-card img,
+    .estampa-card img {
+        height: 300px;
+        padding: 30px;
+    }
+
+    /* Texto tarjetas */
+    h3 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    .filtro-btn {
+        font-size: 1.5rem;
+    }
+
+    .filtro-dropdown {
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .filtro-dropdown li {
+        font-size: 1.6rem;
+    }
+
+    .dropdown-close {
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+    section {
+        padding: 40px 20px !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px;
+    }
+
+    /* UNA SOLA COLUMNA */
+    .vinos-grid,
+    .hostias-grid,
+    .velas-grid,
+    .camandulas-grid,
+    .llaveros-grid,
+    .liturgicos-grid,
+    .libros-grid,
+    .vasos-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Imágenes más pequeñas */
+    .vino-card img,
+    .hostia-card img,
+    .vela-card img,
+    .camandula-card img,
+    .llavero-card img,
+    .liturgico-card img,
+    .libro-card img,
+    .vaso-card img,
+    .cristo-card img,
+    .estampa-card img {
+        height: 220px;
+        padding: 20px;
+    }
+
+    /* Texto tarjetas */
+    h3 {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* Ajuste fino del dropdown en móvil */
+@media (max-width: 600px) {
+    .filtro-dropdown li {
+        letter-spacing: 1px;
+    }
+}
+
+/* =========================================
+   MODALES RESPONSIVE
+========================================= */
+
+/* Imagen del modal */
+[class^="modal-content"] {
+    width: 90%;
+    max-width: 900px;
+    max-height: 80vh;
+}
+
+/* Botón X base (ESCRITORIO) */
+[class^="modal-close"] {
+    font-size: clamp(4rem, 6vw, 8rem);
+    top: 20px;
+    right: 30px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    [class^="modal-close"] {
+        font-size: 4rem;
+        top: 15px;
+        right: 20px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    [class^="modal-close"] {
+        font-size: 9rem;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+
+    [class^="modal-content"] {
+        width: 95%;
+        max-height: 70vh;
+    }
+}
+
+/* Escritorio grande → 4 columnas */
+@media (min-width: 1200px) {
+    .velas-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablets → 2 columnas */
+@media (max-width: 1199px) and (min-width: 601px) {
+    .velas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares → 1 columna */
+@media (max-width: 600px) {
+    .velas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   FIX RESPONSIVE ESCRITORIO / PORTÁTILES
+========================================= */
+
+.vinos-grid,
+.hostias-grid,
+.velas-grid,
+.camandulas-grid,
+.llaveros-grid,
+.liturgicos-grid,
+.libros-grid,
+.vasos-grid,
+.cristos-grid,
+.estampas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Tarjetas más fluidas */
+.vino-card,
+.hostia-card,
+.vela-card,
+.camandula-card,
+.llavero-card,
+.liturgico-card,
+.libro-card,
+.vaso-card,
+.cristo-card,
+.estampa-card {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Imágenes adaptables */
+.vino-card img,
+.hostia-card img,
+.vela-card img,
+.camandula-card img,
+.llavero-card img,
+.liturgico-card img,
+.libro-card img,
+.vaso-card img,
+.cristo-card img,
+.estampa-card img {
+    width: 100%;
+    height: clamp(220px, 30vw, 500px);
+    object-fit: contain;
+    padding: clamp(15px, 3vw, 60px);
+}
+
+/* Textos fluidos */
+.vino-info h3,
+.hostia-info h3,
+.vela-info h3,
+.camandula-info h3,
+.llavero-info h3,
+.liturgico-info h3,
+.libro-info h3,
+.vaso-info h3,
+.cristo-info h3,
+.estampa-info h3 {
+    font-size: clamp(1.4rem, 2vw, 4rem);
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+/* Referencias fluidas */
+.vino-ref,
+.hostia-ref,
+.vela-ref,
+.camandula-ref,
+.llavero-ref,
+.liturgico-ref,
+.libro-ref,
+.vaso-ref,
+.cristo-ref,
+.estampa-ref {
+    font-size: clamp(1rem, 1.4vw, 2.5rem);
+}
+
+/* Secciones más estables */
+.vinos-section,
+.hostias-section,
+.velas-section,
+.camandulas-section,
+.llaveros-section,
+.liturgicos-section,
+.libros-section,
+.vasos-section,
+.cristos-section,
+.estampas-section {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Evita desbordamientos globales */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Laptops pequeñas */
+@media (max-width: 1400px) {
+
+    .vinos-grid,
+    .hostias-grid,
+    .velas-grid,
+    .camandulas-grid,
+    .llaveros-grid,
+    .liturgicos-grid,
+    .libros-grid,
+    .vasos-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+}
+
+/* Portátiles */
+@media (max-width: 1100px) {
+
+    .vinos-grid,
+    .hostias-grid,
+    .velas-grid,
+    .camandulas-grid,
+    .llaveros-grid,
+    .liturgicos-grid,
+    .libros-grid,
+    .vasos-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    .vinos-grid,
+    .hostias-grid,
+    .velas-grid,
+    .camandulas-grid,
+    .llaveros-grid,
+    .liturgicos-grid,
+    .libros-grid,
+    .vasos-grid,
+    .cristos-grid,
+    .estampas-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE FILTRO COMPUTADORES / PORTÁTILES
+========================================= */
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+
+    .filtro-dropdown {
+        gap: 28px;
+        padding: 80px 40px 40px;
+    }
+
+    .filtro-dropdown li {
+        font-size: 2.1rem;
+        letter-spacing: 1.5px;
+        line-height: 1.1;
+    }
+
+    .dropdown-close {
+        font-size: 2rem;
+        padding: 10px 24px;
+        top: 20px;
+        right: 20px;
+    }
+
+}
+
+/* Computadores y portátiles */
+@media (max-width: 1399px) and (min-width: 901px) {
+
+    .filtro-dropdown {
+        gap: 24px;
+        padding: 80px 30px 30px;
+    }
+
+    .filtro-dropdown li {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+
+    .dropdown-close {
+        font-size: 1.6rem;
+        padding: 8px 20px;
+        top: 18px;
+        right: 18px;
+    }
+
+}
